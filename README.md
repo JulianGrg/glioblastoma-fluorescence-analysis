@@ -4,7 +4,7 @@ Python microscopy workflow accompanying *Functional genomic profiling identifies
 
 This repository extracts Olympus VSI scenes, defines a fluorescence-derived mask using one reference channel, and measures maximum, minimum, and mean intensity in every channel within that mask. 
 
-## Scope and relationship to the manuscript
+## Scope
 
 The supplied notebook reports raw per-channel intensity measurements within a shared mask; it does not perform GFP/DAPI normalization.
 
@@ -25,20 +25,7 @@ environment.yml                        Conda environment with Python 3.12
 
 ## Installation
 
-Use Python 3.12, matching the original notebook's Python minor version. From the repository root:
-
-```bash
-python3.12 -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
-python -m pip install -r requirements.txt
-python -m ipykernel install --prefix "$VIRTUAL_ENV" --name glioblastoma-fluorescence-analysis --display-name "Glioblastoma fluorescence analysis"
-python -m jupyterlab analysis.ipynb
-```
-
-On Windows, activate with `.venv\Scripts\activate` and use `%VIRTUAL_ENV%` instead of `$VIRTUAL_ENV` in Command Prompt.
-
-Alternatively, from the repository root:
+From the repository root:
 
 ```bash
 conda env create -f environment.yml
